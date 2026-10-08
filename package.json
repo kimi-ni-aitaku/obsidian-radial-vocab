@@ -1,0 +1,26 @@
+{
+  "name": "obsidian-radial-vocab",
+  "version": "1.0.0",
+  "description": "Visualize vocabulary roots, affixes, and semantic families in a 360° radial mindmap galaxy graph directly from your Markdown notes.",
+  "main": "main.js",
+  "scripts": {},
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin",
+    "vocabulary",
+    "mindmap",
+    "radial-graph",
+    "language-learning",
+    "catppuccin"
+  ],
+  "author": "kimi-ni-aitaku",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kimi-ni-aitaku/obsidian-radial-vocab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kimi-ni-aitaku/obsidian-radial-vocab/issues"
+  },
+  "homepage": "https://github.com/kimi-ni-aitaku/obsidian-radial-vocab#readme"
+}

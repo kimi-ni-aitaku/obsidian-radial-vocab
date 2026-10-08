@@ -1,0 +1,10 @@
+{
+  "id": "radial-vocab",
+  "name": "Radial Vocab (360° 单词星系导图)",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Visualize vocabulary roots, affixes, and semantic families in a 360° radial mindmap galaxy graph directly from your Markdown notes.",
+  "author": "kimi-ni-aitaku",
+  "authorUrl": "https://github.com/kimi-ni-aitaku",
+  "isDesktopOnly": false
+}

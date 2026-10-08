@@ -1,0 +1,309 @@
+/* Radial Vocab Dedicated View & Codeblock Styles - Catppuccin Palette Edition */
+
+:root,
+.theme-light,
+.radial-vocab-view-container {
+  /* Catppuccin Latte (Light Theme) */
+  --ctp-rosewater: #dc8a78;
+  --ctp-flamingo: #dd7878;
+  --ctp-pink: #ea76cb;
+  --ctp-mauve: #8839ef;
+  --ctp-red: #d20f39;
+  --ctp-maroon: #e64553;
+  --ctp-peach: #fe640b;
+  --ctp-yellow: #df8e1d;
+  --ctp-green: #40a02b;
+  --ctp-teal: #179299;
+  --ctp-sky: #04a5e5;
+  --ctp-sapphire: #209fb5;
+  --ctp-blue: #1e66f5;
+  --ctp-lavender: #7287fd;
+  --ctp-text: #4c4f69;
+  --ctp-subtext1: #5c5f77;
+  --ctp-subtext0: #6c6f85;
+  --ctp-overlay2: #7c7f93;
+  --ctp-overlay1: #8c8fa1;
+  --ctp-overlay0: #9ca0b0;
+  --ctp-surface2: #acb0be;
+  --ctp-surface1: #bcc0cc;
+  --ctp-surface0: #ccd0da;
+  --ctp-base: #eff1f5;
+  --ctp-mantle: #e6e9ef;
+  --ctp-crust: #dce0e8;
+
+  --ctp-card-bg: #ffffff;
+  --ctp-card-border: #e2e8f0;
+  --ctp-card-shadow: 0 2px 10px rgba(76, 79, 105, 0.06), 0 1px 3px rgba(76, 79, 105, 0.04);
+  --ctp-card-shadow-hover: 0 6px 20px rgba(114, 135, 253, 0.16), 0 2px 6px rgba(76, 79, 105, 0.08);
+  --ctp-bg-canvas: #ffffff;
+}
+
+.theme-dark .radial-vocab-view-container,
+.theme-dark .radial-vocab-container {
+  /* Catppuccin Mocha (Dark Theme) */
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+
+  --ctp-card-bg: #1e1e2e;
+  --ctp-card-border: #313244;
+  --ctp-card-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --ctp-card-shadow-hover: 0 8px 24px rgba(180, 190, 254, 0.22);
+  --ctp-bg-canvas: #181825;
+}
+
+.radial-vocab-view-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--ctp-bg-canvas);
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+}
+
+.radial-view-header {
+  display: none !important;
+}
+
+.radial-view-graph-body {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radial-vocab-container {
+  width: 100%;
+  min-height: 580px;
+  height: 640px;
+  margin: 16px 0;
+  border: 1px solid var(--ctp-surface0);
+  border-radius: 12px;
+  background: var(--ctp-bg-canvas);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.radial-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 24px;
+}
+
+.radial-graph-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.radial-viewport {
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+/* 模块象征性圆角虚线框 */
+.module-cluster-group {
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.module-cluster-group rect[stroke-dasharray] {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.module-badge-group text {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Inter", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* 优雅平滑曲线与连接点设计 */
+.radial-edge-path {
+  transition: stroke 0.2s ease, stroke-width 0.2s ease, stroke-opacity 0.2s ease;
+  pointer-events: stroke;
+}
+
+.radial-edge-path:hover {
+  stroke-width: 2.6px !important;
+  stroke-opacity: 1 !important;
+  filter: drop-shadow(0 2px 6px rgba(114, 135, 253, 0.3));
+}
+
+.edge-start-dot,
+.edge-branch-dot,
+.edge-end-dot {
+  transition: r 0.2s ease, opacity 0.2s ease;
+}
+
+/* 中心太阳核心圆设计 (Celestial Sun Core) */
+.radial-root-group {
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s ease, filter 0.2s ease;
+}
+
+.radial-root-group:hover {
+  filter: drop-shadow(0 6px 20px rgba(114, 135, 253, 0.25));
+}
+
+.radial-root-group:hover .orbit-ring-outer {
+  stroke-opacity: 0.8 !important;
+  animation: orbitRotate 18s linear infinite;
+}
+
+@keyframes orbitRotate {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 48; }
+}
+
+/* 单词药丸胶囊与微型词缀徽标 */
+.radial-node-group {
+  transition: filter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.radial-node-group:hover {
+  filter: drop-shadow(0 4px 14px rgba(114, 135, 253, 0.18));
+}
+
+.node-text-word {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, sans-serif;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.node-text-cn {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.affix-tag-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.02em;
+}
+
+.radial-node-group:hover .node-text-word {
+  opacity: 0.95;
+}
+
+.radial-node-group:hover .pill-bg {
+  stroke-width: 2.2px !important;
+}
+
+/* Catppuccin 浮动操作栏设计 (Floating Glassmorphism Toolbar) */
+.radial-toolbar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--ctp-surface0);
+  box-shadow: 0 4px 16px rgba(76, 79, 105, 0.08), 0 1px 3px rgba(76, 79, 105, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 40;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.theme-dark .radial-toolbar {
+  background: rgba(30, 30, 46, 0.85);
+  border-color: var(--ctp-surface0);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.radial-toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 10px;
+  height: 28px;
+  border-radius: 16px;
+  background: transparent;
+  border: none;
+  color: var(--ctp-text);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.radial-toolbar-btn:hover {
+  background: rgba(114, 135, 253, 0.12);
+  color: var(--ctp-lavender);
+  transform: translateY(-0.5px);
+}
+
+.radial-toolbar-btn:active,
+.radial-toolbar-btn.btn-active {
+  background: var(--ctp-lavender);
+  color: #ffffff !important;
+  transform: scale(0.95);
+}
+
+.radial-toolbar-btn.icon-only {
+  width: 28px;
+  padding: 0;
+  font-size: 14px;
+}
+
+.radial-toolbar-divider {
+  width: 1px;
+  height: 16px;
+  background: var(--ctp-surface0);
+  margin: 0 2px;
+}
+
+.radial-tidy-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.radial-tidy-text {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+}
